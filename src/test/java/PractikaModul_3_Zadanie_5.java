@@ -4,20 +4,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
 
 
-public class PractikaModul_3_Zadanie_4 {
 
+public class PractikaModul_3_Zadanie_5 {
+    private static WebDriver driver;
 
-    private WebDriver driver;
-
-    @Before
-    public void SetUp()
+    @BeforeClass
+    public static void SetUp()
     {
         System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
         driver = new ChromeDriver();
     }
 
-    @After
-    public void tearDown()
+    @AfterClass
+    public static void tearDown()
 
     {
         driver.quit();
@@ -103,8 +102,4 @@ public class PractikaModul_3_Zadanie_4 {
         var Result = driver.findElements(By.className("header__content")).get(1);
         Assert.assertEquals("Ваши ответы:", Result.getText());
     }
-
-
-
-
 }
